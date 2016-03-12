@@ -5,3 +5,26 @@
 .nav-wrapper a {
   color: #333;
 }
+
+.jumbotron {
+  height: 100px;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #301812;
+  color: white;
+}
+
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 200px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -200px; /* negative value of footer height */
+	height: 200px;
+	clear:both;}
