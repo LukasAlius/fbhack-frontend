@@ -12,7 +12,7 @@ nav .brand-logo {
 
 .jumbotron {
   background: url('https://images.unsplash.com/photo-1445985543470-41fba5c3144a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7aec9385640d20db0791e9790ff5883b');
-  height: 450px;
+  height: 600px;
   background-size: cover;
   padding: 60px;
   color: white;
@@ -50,3 +50,8 @@ html, body {height: 100%;}
 	margin-top: -200px; /* negative value of footer height */
 	height: 200px;
 	clear:both;}
+
+.nav-wrapper{
+    padding-left: 20px;
+    padding-right:  20px;
+}
