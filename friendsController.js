@@ -1,17 +1,40 @@
-function addChip(src, name) {
-  var div = document.createElement('div');
-  var img = document.createElement('img');
-  img.src = src;
-  div.className = 'chip';
-  div.appendChild(img);
+var data = [
+  {
+    name: "Someone",
+    pic: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"
+  },
+  {
+    name: "Another One",
+    pic: "https://s3.amazonaws.com/uifaces/faces/twitter/sillyleo/128.jpg"
+  }
+];
 
-  var span = document.createElement('span');
-  span.innerHTML = name;
-  div.appendChild(span);
+var Friends = React.createClass({
+  render: function(){
+    return (
+      <div>
+        {
+          data.map(function(item){
+            return <Chip name={item.name} pic={item.pic}/>
+          })
+        }
+      </div>
+    )
+  }
+});
 
-  document.getElementById('friends').appendChild(div);
-}
+var Chip = React.createClass({
+  render: function(){
+    return (
+      <div className="chip">
+        <img src={this.props.pic}/>
+        <span>{this.props.name}</span>
+      </div>
+    )
+  }
+});
 
-for (i = 0; i < 7; i++) {
-  addChip('https://s3.amazonaws.com/uifaces/faces/twitter/k/128.jpg', "Added To");
-}
+ReactDOM.render(
+  <Friends />,
+  document.getElementById('friends')
+)
