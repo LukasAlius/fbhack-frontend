@@ -19,16 +19,52 @@ var all = [
   }
 ];
 
+$.getJSON('', function(data){
+  all = data;
+})
+
 var audioObject = null;
 
 var PlayList = React.createClass({
+
+  getInitialState: function(){
+    return {
+      list: []
+    }
+  },
+
+  updateState: function(){
+    var temp = [];
+    $.getJSON('', function(data){
+      temp = data;
+    })
+
+    this.setState({
+      list: temp
+    })
+  },
+
+  componentDidMount: function(){
+    // var temp = [];
+    // $.getJSON('', function(data){
+    //   temp = data;
+    // })
+    //
+    // this.setState({
+    //   list: temp
+    // })
+
+    this.setState({
+      list: all
+    })
+  },
 
   render: function(){
     return (
       <div>
         <ul className="collection col s12">
         {
-          all.map(function(m, index){
+          this.state.list.map(function(m, index){
             return <Item  title={m.title} artist={m.artist} description={m.description} preview={m.preview_url}/>
           })
         }

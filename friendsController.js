@@ -1,4 +1,4 @@
-var data = [
+var all = [
   {
     name: "Someone",
     pic: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"
@@ -10,11 +10,44 @@ var data = [
 ];
 
 var Friends = React.createClass({
+
+  getInitialState: function(){
+    return {
+      list: []
+    }
+  },
+
+  updateState: function(){
+    var temp = [];
+    $.getJSON('', function(data){
+      temp = data;
+    })
+
+    this.setState({
+      list: temp
+    })
+  },
+
+  componentDidMount: function(){
+    var temp = [];
+    $.getJSON('', function(data){
+      temp = data;
+    })
+
+    this.setState({
+      list: temp
+    })
+
+    this.setState({
+      list: all
+    })
+  },
+
   render: function(){
     return (
       <div>
         {
-          data.map(function(item){
+          this.state.list.map(function(item){
             return <Chip name={item.name} pic={item.pic}/>
           })
         }
