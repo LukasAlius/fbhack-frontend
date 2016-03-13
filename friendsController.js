@@ -30,17 +30,22 @@ var Friends = React.createClass({
 
   componentDidMount: function(){
     var temp = [];
-    $.getJSON('', function(data){
-      temp = data;
-    })
+    // $.getJSON('', function(data){
+    //   temp = data;
+    // })
+    //
+    // this.setState({
+    //   list: temp
+    // })
 
-    this.setState({
-      list: temp
-    })
+    var self = this;
 
-    this.setState({
-      list: all
-    })
+    setInterval(function(){
+      console.log("Now");
+      self.setState({
+        list: all
+      });
+    }, 5000)
   },
 
   render: function(){
