@@ -9,6 +9,14 @@ var all = [
   }
 ];
 
+function hiderofile(){
+    $("#nav-mobile").hide();
+}
+
+function showProfile(){
+    $("#nav-mobile").show();
+}
+
 var Friends = React.createClass({
 
   getInitialState: function(){
